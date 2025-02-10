@@ -1,0 +1,123 @@
+.game-card-image {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* Ensures that content doesn't overflow during transitions */
+  }
+  .game-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image fully covers the space with proper aspect ratio */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    filter: blur(0); /* Ensure no blur by default */
+  }
+
+  .game-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the video fits the container perfectly */
+  }
+  
+  .game-card-img:hover {
+    transform: scale(1.1); /* Adds zoom-in effect when hovering */
+  }
+  
+  .game-card-body {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .game-description {
+    color: #333;
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    
+  }
+  
+  .game-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0, 21, 41, 255);
+  }
+  
+  .buy-btn {
+    background-color: rgba(0, 21, 41, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .buy-btn-icon {
+    background-color: rgba(0, 21, 41, 255);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buy-btn-icon:hover {
+    background-color: rgba(0, 21, 41, 255); /* Darker red on hover */
+  }
+  
+  .buy-btn-icon i {
+    font-size: 1.5rem; /* Larger icon */
+  }
+  
+  .buy-btn:hover {
+    background-color: rgba(0, 21, 41, 255); /* Darker red on hover */
+  }
+  
+  .featured-title {
+    font-size: 2.5rem; /* Increase size for emphasis */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Dark text color */
+    text-transform: uppercase; /* Capitalize each word */
+    letter-spacing: 2px; /* Add spacing between letters for a more modern look */
+    padding: 10px 0;
+    background: linear-gradient(45deg, rgba(0, 21, 41, 255), rgba(0, 21, 41, 255)); /* Gradient background */
+    -webkit-background-clip: text; /* Apply the gradient to the text */
+    color: transparent; /* Make the text transparent to show the gradient */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for subtle depth */
+  }
+
+
+  .game-trailer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; /* Ensure the video overlay stays on top */
+  }
+  
+  
+  .game-card-image:hover .game-card-img {
+    opacity: 0.3;  /* Dim the image when hovered */
+    filter: blur(2px); /* Optional: Add a slight blur effect to image on hover */
+  }
+  
+  .game-card-image:hover .game-trailer-overlay {
+    opacity: 1;  /* Show the trailer overlay on hover */
+  }
+  

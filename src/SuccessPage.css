@@ -1,0 +1,51 @@
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4CAF50, #81C784);
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .success-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 20px;
+  }
+  
+  .success-message {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .redirect-message {
+    font-size: 1rem;
+    color: #777;
+    font-style: italic;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

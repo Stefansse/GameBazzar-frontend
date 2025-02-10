@@ -1,0 +1,139 @@
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change from 'center' to 'flex-start' */
+    min-height: 80vh;
+    padding: 2rem;
+    border-radius: 10px;
+    overflow-y: auto; /* Allows for scrolling */
+  }
+  
+  .custom-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    max-height: 60vh; /* Limit the height to avoid overflow */
+    overflow-y: auto; /* Allow scrolling inside the list */
+  }
+  .list-item {
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgba(0,21,41,255);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .list-item:hover {
+    background-color: #1e2caf98;
+    cursor: pointer;
+  }
+  
+  .list-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .sub-list {
+    margin-top: 15px;
+    padding-left: 20px;
+  }
+  
+  .sub-list-item {
+    margin: 15px 0;
+    color: rgba(0,21,41,255);
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgba(0, 21, 41, 0.8);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .sub-description {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #b0c4de;
+    padding-left: 10px;
+  }
+  
+  .contact-button {
+    margin-top: 20px;
+    padding: 10px;
+    color: rgba(0,21,41,255);
+    font-size: 18px;
+    width: 100%; /* Make it full-width to match the list */
+    max-width: 500px; /* Consistent with max-width of the list */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    margin-top: 10px; /* Reduce space */
+    min-height: 50px;
+
+  }
+  
+  .contact-button:hover {
+    background-color: #1e2caf98;
+  }
+  
+  /* Icon Styling */
+  .contact-button i {
+    margin-right: 8px; /* Space between icon and text */
+  }
+
+
+
+  /* Container for title and button */
+  .header-container {
+    display: flex;
+    align-items: stretch;  /* Stretch to the same height */
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Title styling */
+  .page-title {
+    font-size: 24px;
+    color: rgba(0,21,41,255);
+    margin: 0;
+    display: flex;
+    align-items: center;  /* Vertically center the text */
+    height: 100%;  /* Ensure it takes full height of the container */
+    padding: 0 10px;  /* Optional: Adjust padding for better spacing */
+    position: relative;
+    left: 700px;
+  }
+  
+  /* "Go Back" button styling */
+  .go-back-button {
+    background-color: rgba(0, 21, 41, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;  /* Match the title's height */
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    right: 880px;
+  }
+  
+  .go-back-button:hover {
+    background-color: #1e2caf98;
+  }
+  
+  .go-back-button i {
+    margin-right: 8px;  /* Space between the icon and text */
+  }
+  
+  

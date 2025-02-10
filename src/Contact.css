@@ -1,0 +1,58 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    min-height: 80vh; /* Adjusts to take up most of the viewport height */
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  
+  .contact-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; /* Centers items in the middle of the row */
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .contact-card {
+    background-color: rgba(0, 21, 41, 1); /* Adjusted background color */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    color: white;
+    cursor: pointer; /* This makes the cursor a hand icon when hovering */
+    transition: transform 0.2s ease-in-out;
+  }
+  .contact-icon {
+    font-size: 40px;
+    color: #ffffff; /* Adjust icon color for contrast */
+    margin-bottom: 10px;
+  }
+  
+  .contact-card h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #ffffff; /* Adjust heading color for contrast */
+  }
+  
+  .contact-card p {
+    color: #cccccc; /* Slightly lighter for readability */
+  }
+  
+  .contact-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Adds a hover effect for better user experience */
+
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  

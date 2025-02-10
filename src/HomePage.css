@@ -1,0 +1,316 @@
+.homepage-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card-grid .ant-card {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 10px;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #1890ff;
+    margin-top: 10px;
+  }
+  
+
+  .avatar-clickable {
+    cursor: pointer; /* Change the cursor to a hand */
+  }
+
+  .email-style {
+    font-size: 18px; /* Adjust as needed */
+    color: rgba(0,21,41,255); /* Cyan text */
+    text-align: center;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Keyframes for glowing effect for email */
+  
+
+  .month-section {
+    margin-bottom: 40px;
+  }
+  .month-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #001529;
+    position: relative;
+    right: 690px
+  }
+
+
+  
+/* Styling for the Featured Games title */
+.featured-title {
+  font-size: 36px;
+  color: #00FFFF; /* Cyan text */
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  right: 150px;
+}
+
+/* Keyframes for glowing effect */
+
+
+.avatar-clickable {
+  width: 40px; /* Smaller avatar size */
+  height: 40px; /* Smaller avatar size */
+  border-radius: 50%; /* Keep the avatar circular */
+  object-fit: cover;
+  position: relative;
+  overflow: hidden; /* Ensure that the lighting stays within the avatar */
+}
+
+.avatar-clickable::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px; /* Size of the lightning bolt */
+  height: 30px; /* Size of the lightning bolt */
+  background-color: rgba(0, 255, 255, 0.8); /* Cyan color for the light */
+  border-radius: 50%; /* Keep the light circular initially */
+  transform: translate(-50%, -50%); /* Center the light inside the avatar */
+  animation: lightning 1.5s infinite; /* Apply lightning effect animation */
+  clip-path: polygon(30% 10%, 40% 30%, 30% 50%, 50% 60%, 40% 80%, 60% 80%, 50% 100%, 70% 80%, 60% 60%, 70% 50%, 60% 30%, 50% 20%); /* Lightning bolt shape */
+}
+
+/* Keyframes for the lightning flash effect */
+@keyframes lightning {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Ensure proper spacing between the avatar and the name */
+.avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap between the avatar and the name */
+}
+
+
+
+
+
+.game-card-image {
+  position: relative;
+  display: inline-block;
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+}
+
+.game-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Optional, for rounded corners */
+  position: relative;
+  z-index: 0;
+}
+
+/* Adding the glowing edge animation around the image */
+.game-card-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid rgba(0, 21, 41, 255); /* Updated to new color */
+  border-radius: 10px; /* Match the border-radius of the image */
+  animation: glowingEdge 3s infinite linear; /* Apply the moving light animation */
+  pointer-events: none; /* Prevent interaction with the animation */
+  z-index: 1; /* Ensure the pseudo-element appears above the image */
+}
+
+/* Keyframes for the glowing edge moving around the image */
+@keyframes glowingEdge {
+  0% {
+    border-top: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-right: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-bottom: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-left: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+  }
+  25% {
+    border-top: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-right: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-bottom: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-left: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+  }
+  50% {
+    border-top: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-right: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-bottom: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-left: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+  }
+  75% {
+    border-top: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-right: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-bottom: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-left: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+  }
+  100% {
+    border-top: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-right: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-bottom: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+    border-left: 3px solid rgba(0, 21, 41, 255); /* Updated color */
+  }
+}
+
+
+
+
+/* Style for the filter section */
+.genre-filter {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  padding: 10px;
+  background-color: rgba(0,21,41,255); /* Semi-transparent white background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 1480px; /* Subtle shadow for depth */
+}
+
+/* Ant Design Select Component */
+.genre-filter .ant-select {
+  font-size: 5px;
+/* Slightly wider for better readability */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  right: 380px;
+  
+}
+
+/* Select Dropdown Styling */
+.genre-filter .ant-select-selector {
+  border: 2px solid rgba(0, 21, 41, 0.3); /* Subtle border */
+  background-color: #ffffff;
+  color: rgba(0, 21, 41, 1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Hover and Focus States */
+.genre-filter .ant-select:hover .ant-select-selector,
+.genre-filter .ant-select-focused .ant-select-selector {
+  border-color: rgba(0,21,41,255); /* Darker border on hover/focus */
+  box-shadow: 0 0 8px rgba(0, 21, 41, 0.2); /* Glow effect */
+}
+
+/* Dropdown Arrow Styling */
+.genre-filter .ant-select-arrow {
+  color: rgba(0, 21, 41, 0.7);
+  transition: color 0.3s ease;
+}
+
+.genre-filter .ant-select:hover .ant-select-arrow {
+  color: rgba(0, 21, 41, 1); /* Darker arrow on hover */
+}
+
+/* Placeholder Styling */
+.genre-filter .ant-select-selection-placeholder {
+  color: rgba(0, 21, 41, 0.5);
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown Menu Styling */
+.genre-filter .ant-select-dropdown {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for dropdown */
+  background-color: #ffffff;
+}
+
+/* Dropdown Options Styling */
+.genre-filter .ant-select-item {
+  font-size: 16px;
+  color: rgba(0, 21, 41, 1);
+  padding: 10px 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Options */
+.genre-filter .ant-select-item-option:hover {
+  background-color: rgba(0, 21, 41, 0.1); /* Light hover effect */
+}
+
+/* Selected Option Styling */
+.genre-filter .ant-select-item-option-selected {
+  background-color: rgba(0, 21, 41, 0.1); /* Light background for selected item */
+  font-weight: 500;
+}
+
+/* Responsive Adjustments for Mobile Screens */
+@media (max-width: 468px) {
+  .genre-filter {
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque on mobile */
+  }
+
+  .genre-filter .ant-select {
+    width: 100%; /* Full width on mobile */
+  }
+}
+
+
+.no-games-message {
+  background-color: #f7f7f7;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0,21,41,255);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+  
+  

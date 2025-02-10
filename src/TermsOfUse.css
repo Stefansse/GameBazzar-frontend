@@ -1,0 +1,72 @@
+/* TermsOfUse.css */
+
+/* Container Styling */
+.terms-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px 20px 40px; /* Increase bottom padding */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .terms-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Styling */
+  .terms-container h2 {
+    color: #2c3e50;
+    font-size: 1.75rem;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  /* Paragraph Styling */
+  .terms-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Strong text styling */
+  .terms-container strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .terms-container {
+      padding: 15px;
+    }
+  
+    .terms-container h1 {
+      font-size: 2rem;
+    }
+  
+    .terms-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .terms-container p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+  }
+  

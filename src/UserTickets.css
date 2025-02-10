@@ -1,0 +1,25 @@
+.user-tickets-container {
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto;    /* Center content horizontally */
+    padding: 20px;     /* Add some padding around the container */
+  }
+  
+  .ant-table {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ant-table th, .ant-table td {
+    padding: 12px 16px;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  
+  

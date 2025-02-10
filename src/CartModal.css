@@ -1,0 +1,118 @@
+/* CartModal.css */
+.cart-modal {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .cart-modal .ant-modal-header {
+    background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%);
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .cart-modal .ant-modal-title {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .cart-modal .ant-modal-body {
+    padding: 24px;
+    background: #f8f9fa;
+  }
+  
+  .cart-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .cart-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quantity-input .ant-input-number {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .quantity-input .ant-input-number-handler-wrap {
+    border-radius: 0 6px 6px 0;
+  }
+  
+  .delete-btn {
+    color: #ff4d4f;
+    transition: all 0.2s ease;
+  }
+  
+  .delete-btn:hover {
+    color: #ff1a1f !important;
+    transform: scale(1.1);
+  }
+  
+  .total-price {
+    font-size: 1.25rem;
+    color: #1890ff;
+    font-weight: 600;
+  }
+  
+  .discount-badge {
+    background: #fff7e6;
+    color: #faad14;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-left: 8px;
+  }
+  
+  .clear-cart-btn {
+    background: #ff4d4f15 !important;
+    border-color: transparent !important;
+    color: rgba(0, 21, 41, 255) !important;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Increased gap for better spacing between text and icon */
+    position: relative;
+    top: 30px;
+    font-size: 18px; /* Increased font size for text and icon */
+    padding: 10px 16px; /* Adjusted padding for a larger button */
+    border-radius: 8px; /* Optional: to make the button look smoother */
+}
+
+  
+  .clear-cart-btn:hover {
+    background: #ff4d4f25 !important;
+    transform: translateY(-1px);
+  }
+  
+  .checkout-btn {
+    background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    color: rgba(0,21,41,255) !important;
+  }
+  
+  .checkout-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  }
+  
+  .empty-cart-message {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+  
+  .empty-cart-message:before {
+    content: "🛒";
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }

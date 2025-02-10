@@ -1,0 +1,467 @@
+/* Navbar buttons in a row */
+.profile-navbar {
+    display: flex; /* Arrange items in a row */
+    justify-content: space-around; /* Space out buttons evenly */
+    gap: 1rem; /* Add spacing between buttons */
+    margin-top: 1rem;
+    text-decoration: none;
+  }
+
+  .profile-navbar .ant-btn a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Ensure the link inherits the button's text color */
+    background: none;
+    color: rgba(0,21,41,255);
+  }
+
+ 
+  
+  /* Remove the border around buttons */
+  .profile-navbar .ant-btn {
+    border: none; /* Remove button border */
+    outline: none; /* Remove any outline */
+    box-shadow: none; /* Remove any box shadow if present */
+    background: none;
+  }
+  .profile-navbar .ant-btn:hover {
+    color: #40a9ff; /* Change color on hover */
+    transition: all 0.3s ease;
+  }
+
+  .profile-navbar .ant-btn {
+    flex: 1; /* Ensure all buttons have the same width */
+    text-align: center; /* Center the text inside buttons */
+  }
+  
+  /* Centering and layout adjustments */
+  .profile-page {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .profile-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    text-align: center; /* Align text to the left */
+    text-decoration: none;
+  }
+  
+  .profile-avatar {
+    display: block;
+    margin: 0 auto 1rem;
+    border: 3px solid #1890ff;
+    border-radius: 50%;
+  }
+  
+  .profile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .profile-achievements .ant-avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  
+  .settings-button {
+    background: none; /* Removes background */
+    border: none; /* Removes button border */
+    padding: 0; /* Removes padding to make the button fit the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the icon */
+    cursor: pointer; /* Adds pointer cursor on hover */
+    transition: transform 0.2s ease;
+  }
+  
+ 
+  
+  .settings-text {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .settings-text:hover {
+    color: #d6eaff; /* Text hover color */
+  }
+  
+  .settings-button .anticon {
+    font-size: 18px; /* Adjust icon size */
+    color: rgba(0,21,41,255); /* Primary color for the icon */
+    position: relative;
+    bottom: 270px;
+    left: 120px;
+    transform: none; /* Disable scaling or movement */
+    transition: none; /* Remove hover transition */
+  }
+  
+  .settings-button:hover .anticon {
+    color: #40a9ff; /* Lighter color on hover */
+    transform: none !important;
+  }
+
+  .moving {
+     /* White text color */
+    text-decoration: none; /* Remove underline */
+    position: relative;
+    right: 45px;
+  }
+  
+  .moving:hover {
+    color: #40a9ff; /* Change color on hover */
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling for the 'moving1' class */
+  .moving1 {
+    position: relative;
+    right: 50px;
+    
+  }
+  
+  .moving1:hover {
+    color: #40a9ff; /* Change color on hover */
+    transition: all 0.3s ease;
+  }
+
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+
+  .review-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .review-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .review-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .review-title {
+    color: #1890ff;
+    margin-bottom: 1rem;
+  }
+  
+  .review-meta {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .grid-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .review-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .author {
+    font-weight: bold;
+  }
+
+
+
+  /* Card Styling */
+.profile-card.sales-tips {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    margin: 20px 0;
+  }
+  
+  .profile-card.sales-tips .ant-typography {
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* List Styling */
+  .ant-list-small .ant-list-item {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .ant-list-small .ant-list-item:last-child {
+    border-bottom: none;
+  }
+  
+  .ant-list-item {
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .ant-list-item:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Add custom bullet points for the list */
+  .ant-list-item::before {
+    content: '\2022'; /* Unicode character for bullet point */
+    font-size: 20px;
+    color: #007bff;
+    margin-right: 10px;
+    position: relative;
+    left: -8px;
+  }
+  
+  /* List item hover effect */
+  .ant-list-item:hover::before {
+    color: #0056b3;
+  }
+
+
+  .profile-card.profile-tags {
+    background-color: #f9f9f9; /* Light gray background for the card */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    margin-bottom: 20px; /* Spacing below the card */
+  }
+  
+  /* Title Styling */
+  .profile-card.profile-tags .ant-typography {
+    font-weight: 600;
+    text-align: center;
+    color: #2c3e50; /* Dark text color for the title */
+    margin-bottom: 20px;
+  }
+  
+  /* Space between tags */
+  .profile-card.profile-tags .ant-space {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adds space between the tags */
+  }
+  
+  /* Tag Styling */
+  .profile-card.profile-tags .ant-tag {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the tags */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  }
+  
+  /* Tag Hover Effects */
+  .profile-card.profile-tags .ant-tag:hover {
+    transform: scale(1.1); /* Slightly enlarge the tag on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+
+
+  .profile-card.profile-tags .ant-tag-gray {
+    background-color: #7f8c8d; /* Gray color for FPS */
+    color: white; /* White text for contrast */
+  }
+  
+  .profile-card.profile-tags .ant-tag-green {
+    background-color: #2ecc71; /* Green color for MMORPG */
+    color: white; /* White text for contrast */
+  }
+  
+  .profile-card.profile-tags .ant-tag-red {
+    background-color: #e74c3c; /* Red color for Sports */
+    color: white; /* White text for contrast */
+  }
+
+
+  .profile-avatar {
+    position: relative; /* Make sure the avatar is positioned relative for animation */
+    animation: floating 3s ease-in-out infinite; /* Apply the floating animation */
+  }
+  
+  /* Keyframes for floating animation */
+  @keyframes floating {
+    0% {
+      transform: translateY(0); /* Start at normal position */
+    }
+    50% {
+      transform: translateY(-10px); /* Move up */
+    }
+    100% {
+      transform: translateY(0); /* Return to normal position */
+    }
+  }
+  
+
+  .game-image {
+    width: 100%; /* Make it fill the entire container */
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image fills the box */
+    border-radius: 8px;
+  }
+
+
+  .small-title {
+    font-size: 12px !important; /* Adjust to desired size */
+    font-weight: normal;
+  }
+  
+  .order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  /* Order Section Styling */
+  .order-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Order Card Styling */
+  .order-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Hover Effects for Order Card */
+  .order-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Order Title Styling */
+  .order-title {
+    color: #1890ff;
+    margin-bottom: 1rem;
+  }
+  
+  /* Order Meta Information Styling */
+  .order-meta {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  /* Grid Item Styling for Order Cards */
+  .grid-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effect for Grid Item */
+  .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Order Meta Information Styling */
+  .order-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Author or Seller Information */
+  .author {
+    font-weight: bold;
+  }
+  
+  /* Specific Styling for Order Tags */
+  .profile-card.order-tags {
+    background-color: #f9f9f9; /* Light gray background for the card */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,21,41,255);
+    margin-bottom: 20px; /* Spacing below the card */
+  }
+  
+  /* Title for Order Tags */
+  .profile-card.order-tags .ant-typography {
+    font-weight: 600;
+    text-align: center;
+    color: #2c3e50; /* Dark text color for the title */
+    margin-bottom: 20px;
+  }
+  
+  /* Space between order tags */
+  .profile-card.order-tags .ant-space {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adds space between the tags */
+  }
+  
+  /* Tag Styling for Orders */
+  .profile-card.order-tags .ant-tag {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the tags */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  }
+  
+  /* Tag Hover Effects for Orders */
+  .profile-card.order-tags .ant-tag:hover {
+    transform: scale(1.1); /* Slightly enlarge the tag on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  /* Styling for Order Status Tags */
+  .profile-card.order-tags .ant-tag-gray {
+    background-color: #7f8c8d; /* Gray color for pending status */
+    color: white; /* White text for contrast */
+  }
+  
+  .profile-card.order-tags .ant-tag-green {
+    background-color: #2ecc71; /* Green color for completed status */
+    color: white; /* White text for contrast */
+  }
+  
+  .profile-card.order-tags .ant-tag-red {
+    background-color: #e74c3c; /* Red color for canceled status */
+    color: white; /* White text for contrast */
+  }
+  

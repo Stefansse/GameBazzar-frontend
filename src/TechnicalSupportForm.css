@@ -1,0 +1,43 @@
+.support-form-container {
+    max-width: 600px;
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .success-message {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .submit-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+  
+  .ant-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ant-input,
+  .ant-select,
+  .ant-input-textarea {
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
