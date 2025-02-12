@@ -77,9 +77,6 @@ function App() {
                 <Route path="/add-review/:gameId" element={<AddReviewForm isLoggedIn={isLoggedIn} />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/cancel" element={<CancelPage />}  />
-
-                {/* Route for Login */}
-            
               </Routes>
             </div>
           </Layout>

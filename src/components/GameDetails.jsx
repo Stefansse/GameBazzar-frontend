@@ -18,6 +18,9 @@ import WishListModal from './WishListModal';
 import { Link } from 'react-router-dom';
 
 
+import ReviewEditModal from './ReviewEditModal';
+
+
 
 //const [cart, setCartState] = useState(null); // State to hold the cart data
 //const [isCartModalOpen, setIsCartModalOpen] = useState(false); 
@@ -41,6 +44,10 @@ const GameDetails = ({ }) => {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedReview, setSelectedReview] = useState(null);
 
 
 
@@ -139,6 +146,20 @@ const GameDetails = ({ }) => {
     }
   };
 
+
+
+  const handleEditClick = (review) => {
+    setSelectedReview(review);
+    setIsEditModalOpen(true);
+  };
+
+  // Close modal
+  const handleCloseModal = () => {
+    setIsEditModalOpen(false);
+    setSelectedReview(null);
+  };
+
+
   
 
   const handleSubmitReview = () => {
@@ -189,6 +210,60 @@ const GameDetails = ({ }) => {
         });
     }
   };
+
+
+
+
+ 
+
+  const handleUpdateReview = (reviewId, updatedRating, updatedComment) => {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+  
+    const updatedReviewData = {
+      rating: updatedRating,
+      comment: updatedComment,
+    };
+  
+    axios
+      .put(`http://localhost:8080/api/reviews/update/${reviewId}`, updatedReviewData, { headers })
+      .then(() => {
+        
+        // Refresh reviews
+        axios.get(`http://localhost:8080/api/reviews/game/${id}`, { headers })
+          .then((res) => setReviews(res.data))
+          .catch((err) => console.error("Error fetching updated reviews:", err));
+      })
+      .catch((error) => {
+        console.error("Error updating review:", error);
+        alert("Failed to update review.");
+      });
+  };
+
+
+
+
+  const handleDeleteReview = (reviewId) => {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+  
+    axios
+      .delete(`http://localhost:8080/api/reviews/delete/${reviewId}`, { headers })
+      .then(() => {
+       
+        // Refresh reviews
+        setReviews((prevReviews) => prevReviews.filter((review) => review.reviewId !== reviewId));
+      })
+      .catch((error) => {
+        console.error("Error deleting review:", error);
+        alert("Failed to delete review.");
+      });
+  };
+  
+
 
 
 
@@ -250,6 +325,8 @@ const GameDetails = ({ }) => {
       </Menu.Item>
     </Menu>
   );
+
+  
   const formatUsername = (email) => {
     const username = email.split('@')[0];
     return username
@@ -439,47 +516,71 @@ const GameDetails = ({ }) => {
 
         {/* Reviews List */}
         <div className="reviews-list">
-          {reviews.length > 0 ? (
-            reviews.map((review) => {
-              const user = users.find(user => user.userId === review.userId); // Check if userId matches
-              return (
-                <div key={review.reviewId} className="review">
-                  {/* Avatar and Rating Section */}
-                  <div className="user-info">
-                    <Avatar
-                      src="https://default-avatar-image.jpg"  // Default avatar image
-                      alt="User Avatar"
-                      className="avatar-clickable"
-                      onClick={() => navigate(`/game/${review.gameId}`)} // Navigate on image click
-                      style={{ cursor: "pointer !important" }} // Add pointer cursor
-                    />
-                    <div className="rating-info">
-                      <p>
-                        {/* Conditionally show thumbs-up or thumbs-down based on the rating */}
-                        {review.rating >= 1 ? (
-                          <FaThumbsUp size="2em" style={{ color: 'green' }} />
-                        ) : (
-                          <FaThumbsDown size="2em" style={{ color: 'red' }} />
-                        )}
-                      </p>
-                    </div>
-                  </div>
+  {reviews.length > 0 ? (
+    reviews.map((review) => {
+      const user = users.find((user) => user.userId === review.userId || null); // Match userId
+      const currentUserId = JSON.parse(localStorage.getItem("userId"));
+      const isCurrentUser = user && currentUserId === review.userId; // Check if current user is the reviewer
 
-                  {/* Review Comment */}
-                  <p>{review.comment}</p>
-                  <p>
-                    {user ?
-                      `${user.firstName.charAt(0).toLowerCase() + user.firstName.slice(1)} ${user.lastName.charAt(0).toLowerCase() + user.lastName.slice(1)}`
-                      : 'Not Available'}
-                    {user ? ` (${getOrdinalDateWithTime(review.reviewDate)})` : ''}
-                  </p>
-                </div>
-              );
-            })
-          ) : (
-            <p className="no-reviews">No reviews available for this game.</p>
+      return (
+        <div key={review.reviewId} className="review">
+          {/* Avatar and Rating Section */}
+          <div className="user-info">
+            <Avatar
+              src="https://default-avatar-image.jpg" // Default avatar image
+              alt="User Avatar"
+              className="avatar-clickable"
+              onClick={() => navigate(`/game/${review.gameId}`)} // Navigate on image click
+              style={{ cursor: "pointer !important" }} // Add pointer cursor
+            />
+            <div className="rating-info">
+              <p>
+                {/* Conditionally show thumbs-up or thumbs-down based on the rating */}
+                {review.rating >= 1 ? (
+                  <FaThumbsUp size="2em" style={{ color: 'green' }} />
+                ) : (
+                  <FaThumbsDown size="2em" style={{ color: 'red' }} />
+                )}
+              </p>
+            </div>
+          </div>
+
+          {/* Review Comment */}
+          <p>{review.comment}</p>
+          <p>
+            {user
+              ? `${user.firstName.charAt(0).toLowerCase() + user.firstName.slice(1)} ${user.lastName
+                  .charAt(0)
+                  .toLowerCase() + user.lastName.slice(1)}`
+              : 'Not Available'}
+            {user ? ` (${getOrdinalDateWithTime(review.reviewDate)})` : ''}
+          </p>
+
+          {/* Edit and Delete Buttons (only visible to the current user) */}
+          {isCurrentUser && (
+            <div className="review-actions">
+              <button
+                className="edit-button"
+                onClick={() => handleEditClick(review)}
+              >
+                Edit
+              </button>
+              <button
+                className="delete-button"
+                onClick={() => handleDeleteReview(review.reviewId)}
+              >
+                Delete
+              </button>
+            </div>
           )}
         </div>
+      );
+    })
+  ) : (
+    <p className="no-reviews">No reviews available for this game.</p>
+  )}
+</div>
+
 
         {/* Add Review Button */}
         <div className="add-review-container">
@@ -500,6 +601,14 @@ const GameDetails = ({ }) => {
         setRating={setRating}
         user={user}
       />
+
+       
+<ReviewEditModal 
+  isVisible={isEditModalOpen} 
+  review={selectedReview} 
+  onSave={handleUpdateReview} 
+  onClose={() => setIsEditModalOpen(false)} 
+/>
     </div>
   );
 };

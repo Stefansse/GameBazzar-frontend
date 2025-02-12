@@ -1,0 +1,43 @@
+
+
+
+
+
+.custom-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid rgba(0, 21, 41, 1);
+  border-radius: 8px;
+  background: #1a1a1a; /* Dark background */
+  color: white;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s;
+}
+
+.custom-textarea:hover, 
+.custom-textarea:focus {
+  border-color: rgba(0, 21, 41, 0.8); /* Slightly lighter border on hover/focus */
+  background: #1a1a1a; /* Ensures the background stays dark */
+  color: white; /* Ensures text stays white */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 21, 41, 0.5); /* Subtle glow effect */
+}
+
+
+
+
+
+
+.custom-rate .ant-rate-star-full {
+  color: rgba(0, 21, 41, 0.8); /* Example: Orange stars */
+}
+
+.custom-rate .ant-rate-star-zero {
+  color: #e67e22; /* Example: Grey for empty stars */
+}
+
+.custom-rate .ant-rate-star:hover .ant-rate-star-full {
+  color: #e67e22; /* Example: Lighter orange on hover */
+}
