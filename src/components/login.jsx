@@ -2,6 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import { useAuth } from './AuthContext';
 
+import GoogleLoginButton from './GoogleLoginButton';
+
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+import '../login.css'
+
+
+
 const Login = ({ showLogin, setLogin }) => {
   const [isLoginMode, setLoginMode] = useState(true);
   const [email, setEmail] = useState("");
@@ -12,7 +20,43 @@ const Login = ({ showLogin, setLogin }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();  // Initialize navigate
 
+
+
+
+
   const { login } = useAuth();
+
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+
+
+  const handleGoogleLogin = () => {
+    // Open Google OAuth in a popup window
+    const width = 600;
+    const height = 600;
+    const left = (window.innerWidth - width) / 2;
+    const top = (window.innerHeight - height) / 2;
+    
+    const popup = window.open(
+      'http://localhost:8080/oauth2/authorization/google',
+      'oauthPopup',
+      `width=${width},height=${height},top=${top},left=${left}`
+    );
+
+    console.log(popup);
+
+    // Check for popup closure
+    const checkPopupClosed = setInterval(() => {
+      if (popup.closed) {
+        clearInterval(checkPopupClosed);
+        const token = localStorage.getItem('JWT');
+        if (token) {
+          navigate('/');
+        }
+      }
+    }, 100);
+  };
+
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,7 +91,8 @@ const Login = ({ showLogin, setLogin }) => {
           localStorage.setItem("role", JSON.stringify(data.role));
           localStorage.setItem('cartId', JSON.stringify(data.cartId));
           localStorage.setItem('wishListId', JSON.stringify(data.wishListId));
-          navigate("/");
+          navigate("/"); // Navigate first
+          
         }
       } catch (error) {
         setErrorMessage("The Username or Password is Incorrect. Try again.");
@@ -92,6 +137,7 @@ const Login = ({ showLogin, setLogin }) => {
     <div className="container d-flex justify-content-center align-items-center min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
       {isLoginMode ? (
         <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "400px", borderColor: "rgba(0,21,41,255)" }}>
+           
           <h2 className="text-center mb-4" style={{ color: "rgba(0,21,41,255)" }}>Welcome to GameBazzar</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -133,6 +179,12 @@ const Login = ({ showLogin, setLogin }) => {
               </a>
             </p>
           </div>
+          <GoogleOAuthProvider clientId={clientId}>
+            <div>
+                <span className='span'>or</span>
+                <GoogleLoginButton />
+            </div>
+        </GoogleOAuthProvider>
         </div>
       ) : (
         <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "400px", borderColor: "rgba(0,21,41,255)" }}>

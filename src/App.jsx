@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import './App.css';
 import './SpaceStyling.css'
 
+import OAuthCallback from './components/OAuthCallback';
+
 
 import { Layout, Typography, Space } from "antd";
 
@@ -77,6 +79,8 @@ function App() {
                 <Route path="/add-review/:gameId" element={<AddReviewForm isLoggedIn={isLoggedIn} />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/cancel" element={<CancelPage />}  />
+                <Route path="/oauth-callback" element={<OAuthCallback />} />
+
               </Routes>
             </div>
           </Layout>

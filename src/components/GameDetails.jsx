@@ -253,7 +253,7 @@ const GameDetails = ({ }) => {
     axios
       .delete(`http://localhost:8080/api/reviews/delete/${reviewId}`, { headers })
       .then(() => {
-       
+         
         // Refresh reviews
         setReviews((prevReviews) => prevReviews.filter((review) => review.reviewId !== reviewId));
       })

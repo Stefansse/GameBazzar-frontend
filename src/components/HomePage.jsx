@@ -84,6 +84,21 @@ const HomePage = () => {
     setPublisher(""); // Reset publisher filter
   };
 
+
+  const handleDeleteGame = async (gameId) => {
+    try {
+      const token = localStorage.getItem("JWT");
+      await axios.delete(`http://localhost:8080/api/games/${gameId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setGames(games.filter(game => game.gameId !== gameId));
+    } catch (error) {
+      console.error("Error deleting game:", error);
+    }
+  };
+
+  
+
   const menu = (
     <Menu>
       <Menu.Divider />
@@ -258,6 +273,34 @@ const HomePage = () => {
                       )}
                     </div>
                   }
+                  actions={[
+                    
+                    user?.role.replace(/^"|"$/g, '') === 'ROLE_ADMIN' && (
+                      <Button
+                        type="link"
+                        danger
+                        key="delete"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleDeleteGame(game.gameId);
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    ),
+                    user?.role.replace(/^"|"$/g, '') === 'ROLE_ADMIN' && (
+                      <Button
+                        type="link"
+                        key="edit"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleEditGame(game.gameId);
+                        }}
+                      >
+                        Edit
+                      </Button>
+                    ),
+                  ].filter(Boolean)} // Filters out null/false values
                 >
                   <div className="game-card-body">
                     <div className="game-footer">
@@ -268,12 +311,13 @@ const HomePage = () => {
                           ? 'Free'
                           : `$${game.price}`}
                       </p>
-                     
                     </div>
                   </div>
                 </Card>
               </Badge.Ribbon>
             );
+            
+            
           })}
       </div>
     </div>
